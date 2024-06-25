@@ -1,5 +1,6 @@
 #include<iostream>
 #include<string>
+#include<fstream>
 using namespace std;
 class Account{
     long accountNo;
@@ -23,3 +24,33 @@ class Account{
     friend ifstream & operator>>(ofstream &ifs,Account &a);
     friend ostream & operator<<(ostream &os,Account &a);
 };
+
+Account::Account(string fname,string lname,float bal){
+    first_name = fname;
+    last_name = lname;
+    balance = bal;
+}
+ofstream & operator <<(ofstream &ofs,Account &a){
+    ofs<<a.accountNo<<endl;
+    ofs<<a.first_name<<endl;
+    ofs<<a.last_name<<endl;
+    ofs<<a.balance;
+    return ofs;
+}
+ostream & operator<<(ostream &os,Account &a)
+{
+    os<<"First Name:"<<a.getFirstName()<<endl;
+    os<<"Last Name:"<<a.getLastName()<<endl;
+    os<<"Account Number:"<<a.getAccNo()<<endl;
+    os<<"Balance:"<<a.getBalance()<<endl;
+    return os;
+}
+ifstream & operator>>(ifstream &ifs,Account &a)
+{
+    ifs>>a.accountNo;
+    ifs>>a.first_name;
+    ifs>>a.last_name;
+    ifs>>a.balance;
+    return ifs; 
+}
+
