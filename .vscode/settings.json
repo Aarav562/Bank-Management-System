@@ -2,7 +2,13 @@
     "files.associations": {
         "iosfwd": "cpp",
         "xstring": "cpp",
-        "string": "cpp"
+        "string": "cpp",
+        "xiosbase": "cpp",
+        "map": "cpp",
+        "format": "cpp",
+        "ostream": "cpp",
+        "iostream": "cpp",
+        "vector": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
